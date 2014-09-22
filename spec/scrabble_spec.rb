@@ -83,6 +83,12 @@ describe Scrabble do
       end
     end
 
-  end
+    it "responds to add_array_points" do
+      expect(Scrabble.new("canteen")).to respond_to :add_array_points
+    end
 
+    it "returns sum of the letter values" do
+      expect(Scrabble.new("canteen").add_array_points).to eq 9
+    end
+  end
 end

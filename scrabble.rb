@@ -58,4 +58,9 @@ class Scrabble
     @num_array
   end
 
+  def add_array_points
+    word_points
+    @num_array.inject { |sum, item| sum + item}
+  end
+
 end
