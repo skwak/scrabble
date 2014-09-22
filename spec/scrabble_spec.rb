@@ -59,9 +59,27 @@ describe Scrabble do
       end
     end
 
-    context "when letters in a word are 'j', 'x'" do
+    context "when letters in a word are 'k'" do
       it "returns array of number 5" do
-        expect(Scrabble.new("jx").word_points).to eq [5,5]
+        expect(Scrabble.new("k").word_points).to eq [5]
+      end
+    end
+
+    context "when letters in a word are 'j', 'x'" do
+      it "returns array of number 8" do
+        expect(Scrabble.new("jx").word_points).to eq [8,8]
+      end
+    end
+
+    context "when letters in a word are 'q', 'z'" do
+      it "returns array of number 10" do
+        expect(Scrabble.new("qz").word_points).to eq [10,10]
+      end
+    end
+
+    context "when letters in a mix of letters" do
+      it "returns array of different numbers" do
+        expect(Scrabble.new("queen").word_points).to eq [10,1,1,1,1]
       end
     end
 

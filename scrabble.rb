@@ -47,8 +47,12 @@ class Scrabble
       elsif letter == "f" || letter == "h" || letter == "v" || letter == "w" ||
       letter == "y"
         @num_array << 4
+      elsif letter == "k"
+        @num_array << 5
       elsif letter == "j" || letter == "x"
-        @num_array << 5 
+        @num_array << 8
+      elsif letter == "q" || letter == "z"
+        @num_array << 10
       end
     end
     @num_array
