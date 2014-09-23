@@ -9,6 +9,12 @@ describe Scrabble do
       end
     end
 
+    describe "#highest_score_from(array_of_words)" do
+      it "returns word with highest score" do
+        expect(Scrabble.highest_score_from(["canteen", "TEST", "xylophone"])).to eq "xylophone"
+      end
+    end
+
     describe "#word_array" do
       it "returns word as an array" do
         expect(Scrabble.word_array("TEST")).to eq ["t", "e", "s", "t"]

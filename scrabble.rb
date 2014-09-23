@@ -31,6 +31,10 @@ class Scrabble
     @num_array.inject { |sum, item| sum + item}
   end
 
+  def self.highest_score_from(array_of_words)
+    array_of_words.max_by { |word| score(word)}
+  end
+
   def self.word_array(word)
     @word = word
     word.downcase.split(//)
