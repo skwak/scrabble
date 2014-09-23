@@ -19,6 +19,8 @@
 # K	5
 # J, X	8
 # Q, Z	10
+
+
 class Scrabble
   attr_accessor :word
 
@@ -28,23 +30,35 @@ class Scrabble
   end
 
   def self.highest_score_from(array_of_words)
-    array_of_words.max_by { |word| score(word)}
+    highest_score_word = array_of_words.max_by {|word| score(word)}
+    highest_score = score(highest_score_word)
+    top_array = array_of_words.find_all { |word| score(word) == highest_score}
+    if (top_array.length > 1)
+      top_array.find { |word| word if tied_score(word, word)}
+    else
+      top_array[0]
+    end
   end
-
-  # def self.find_array_of_scores(array_of_words)
-  #   @scores_array = []
-  #   array_of_words.each { |word| @scores_array << score(word) }
-  #   @scores_array
-  # end
 
   def self.tied_score(word, another_word)
     if (score(word) == score(another_word)) && (word.length <
-      another_word.length)
-      score(word)
+      another_word.length) && (word.length != 7) && (another_word.length != 7)
+      word
+    elsif (word.length == 7) || (another_word.length == 7)
+      bonus_seven
     else
       another_word
     end
   end
+
+  def self.bonus_seven(word, another_word)
+    if (score(word) == score(another_word)) && (word.length == 7)
+      word
+    else
+      another_word
+    end
+  end
+
 
   def self.word_array(word)
     @word = word
