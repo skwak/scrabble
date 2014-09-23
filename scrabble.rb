@@ -7,17 +7,17 @@ class Scrabble
   end
 
   def self.highest_score_from(array_of_words)
-    find_top_word = array_of_words[0]
+    find_highest_word = array_of_words[0]
     array_of_words.each do |word|
-      if score(word) > score(find_top_word)
-        find_top_word = word
-      elsif score(word) == score(find_top_word)
-        find_top_word = tied_score(word, find_top_word)
+      if score(word) > score(find_highest_word)
+        find_highest_word = word
+      elsif score(word) == score(find_highest_word)
+        find_highest_word = tied_score(word, find_highest_word)
       else
-        find_top_word
+        find_highest_word
       end
     end
-    find_top_word
+    find_highest_word
   end
 
   def self.tied_score(word, another_word)

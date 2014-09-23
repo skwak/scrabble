@@ -84,8 +84,6 @@ describe Scrabble do
         end
       end
     end
-
 end
-
 
 end
