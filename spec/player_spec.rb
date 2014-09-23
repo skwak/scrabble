@@ -38,6 +38,25 @@ describe Player do
       end
     end
 
+  describe "#won?" do
+    it "returns whether or not player has over 100 pts" do
+      player.play("bump")
+      player.play("jump")
+      player.play("zebra")
+      player.play("orchid")
+      player.play("jolly")
+      player.play("barter")
+      player.play("octopus")
+      player.play("magnificent")
+      expect(player.won?).to eq true
+    end
+
+    it "returns whether or not player has over 100 pts" do
+      player.play("weird")
+      player.play("twitter")
+      expect(player.won?).to eq false
+    end
+  end
 
   end
 end

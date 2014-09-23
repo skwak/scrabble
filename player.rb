@@ -28,6 +28,14 @@ class Player
     sum
   end
 
+  def won?
+    if total_score > 100
+      true
+    else
+      false
+    end
+  end
+
   # def all_words_into_array(scores)
   #   scores.each { |score| @scores_array << score }
   # end
