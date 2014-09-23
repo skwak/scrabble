@@ -39,7 +39,6 @@ class Scrabble
     end
   end
 
-
   def self.word_array(word)
     @word = word
     word.downcase.split(//)

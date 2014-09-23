@@ -29,15 +29,15 @@ describe Player do
         expect(player.highest_scoring_word).to eq "jump"
       end
     end
-    # describe "#all_words_into_array" do
-    #   it "returns an array of all the player's words" do
-    #   end
-    # end
-    #
-    # describe "#total_score" do
-    #   it "returns total score" do
-    #   end
-    # end
+
+    describe "#total_score" do
+      it "returns total score of all the player's words" do
+        player.play("bump")
+        player.play("jump")
+        expect(player.total_score).to eq 25
+      end
+    end
+
 
   end
 end

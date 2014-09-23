@@ -22,6 +22,14 @@ class Player
     Scrabble.highest_score_from(@plays)
   end
 
+  def total_score
+    sum=0
+    @plays.each do |word|
+      sum+=Scrabble.score(word)
+    end
+    sum
+  end
+
   # def all_words_into_array(scores)
   #   scores.each { |score| @scores_array << score }
   # end
