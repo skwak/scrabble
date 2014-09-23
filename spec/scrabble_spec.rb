@@ -11,9 +11,21 @@ describe Scrabble do
 
     describe "#highest_score_from(array_of_words)" do
       it "returns word with highest score" do
-        expect(Scrabble.highest_score_from(["canteen", "TEST", "xylophone"])).to eq "xylophone"
+        expect(Scrabble.highest_score_from(["test", "xylophone", "boo"])).to eq "xylophone"
       end
     end
+
+    describe "#find_array_of_scores" do
+      it "returns array of scores of words" do
+        expect(Scrabble.find_array_of_scores(["test", "tag", "run"])).to eq [4,4,3]
+      end
+    end
+
+    # describe "#tied_score" do
+    #   it "returns word with highest score" do
+    #     expect(Scrabble.tied_score(["test", "tag"])).to eq "tag"
+    #   end
+    # end
 
     describe "#word_array" do
       it "returns word as an array" do

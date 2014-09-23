@@ -22,10 +22,6 @@
 class Scrabble
   attr_accessor :word
 
-  # def initialize
-  #   @word = word
-  # end
-
   def self.score(word)
     array_of_values(word)
     @num_array.inject { |sum, item| sum + item}
@@ -34,6 +30,15 @@ class Scrabble
   def self.highest_score_from(array_of_words)
     array_of_words.max_by { |word| score(word)}
   end
+
+  def self.find_array_of_scores(array_of_words)
+    @scores_array = []
+    array_of_words.each { |word| @scores_array << score(word) }
+    @scores_array
+  end
+
+  # def tied_score(array_of_words)
+  # end
 
   def self.word_array(word)
     @word = word
