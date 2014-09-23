@@ -3,37 +3,37 @@ require './scrabble'
 describe Scrabble do
 
   describe "class methods" do
-    describe "#score" do
+    describe ".score" do
       it "returns sum of the letter values" do
         expect(Scrabble.score("canteen")).to eq 9
       end
     end
 
-    describe "#highest_score_from(array_of_words)" do
+    describe ".highest_score_from(array_of_words)" do
       it "returns word with highest score" do
         expect(Scrabble.highest_score_from(["test", "xylophone", "boo"])).to eq "xylophone"
       end
     end
 
-    describe "#find_array_of_scores" do
-      it "returns array of scores of words" do
-        expect(Scrabble.find_array_of_scores(["test", "tag", "run"])).to eq [4,4,3]
-      end
-    end
-
-    # describe "#tied_score" do
-    #   it "returns word with highest score" do
-    #     expect(Scrabble.tied_score(["test", "tag"])).to eq "tag"
+    # describe "#find_array_of_scores" do
+    #   it "returns array of scores of words" do
+    #     expect(Scrabble.find_array_of_scores(["test", "tag", "run"])).to eq [4,4,3]
     #   end
     # end
 
-    describe "#word_array" do
+    describe ".tied_score" do
+      it "returns word with highest score" do
+        expect(Scrabble.tied_score(["test", "tag"])).to eq "tag"
+      end
+    end
+
+    describe ".word_array" do
       it "returns word as an array" do
         expect(Scrabble.word_array("TEST")).to eq ["t", "e", "s", "t"]
       end
     end
 
-    describe "#array_of_values" do
+    describe ".array_of_values" do
 
       it "returns an array of values for each letter in the word" do
         expect(Scrabble.array_of_values("TEST")).to eq [1,1,1,1]

@@ -31,14 +31,15 @@ class Scrabble
     array_of_words.max_by { |word| score(word)}
   end
 
-  def self.find_array_of_scores(array_of_words)
-    @scores_array = []
-    array_of_words.each { |word| @scores_array << score(word) }
-    @scores_array
-  end
-
-  # def tied_score(array_of_words)
+  # def self.find_array_of_scores(array_of_words)
+  #   @scores_array = []
+  #   array_of_words.each { |word| @scores_array << score(word) }
+  #   @scores_array
   # end
+
+  def self.tied_score(array_of_words)
+    array_of_words.each { |word| word if score(word).length < score(word).length}
+  end
 
   def self.word_array(word)
     @word = word
