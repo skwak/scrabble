@@ -33,11 +33,12 @@ class Scrabble
     highest_score_word = array_of_words.max_by {|word| score(word)}
     highest_score = score(highest_score_word)
     top_array = array_of_words.find_all { |word| score(word) == highest_score}
-    if (top_array.length > 1)
-      top_array.find { |word| word if tied_score(word, word)}
-    else
-      top_array[0]
-    end
+    top_array.sort.last
+    # if (top_array.length = 2)
+    #   top_array.find { |word| word if tied_score(word, highest_score_word)}
+    # else
+    #   top_array[0]
+    # end
   end
 
   def self.tied_score(word, another_word)
