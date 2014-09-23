@@ -30,10 +30,21 @@ class Scrabble
   end
 
   def self.highest_score_from(array_of_words)
-    highest_score_word = array_of_words.max_by {|word| score(word)}
-    highest_score = score(highest_score_word)
-    top_array = array_of_words.find_all { |word| score(word) == highest_score}
-    top_array.sort.last
+    find_top_word = array_of_words[0]
+    array_of_words.each do |word|
+      if score(word) > score(find_top_word)
+        find_top_word = word
+      elsif score(word) == score(find_top_word)
+        find_top_word = tied_score(word, find_top_word)
+      else
+        find_top_word
+      end
+    end
+
+    find_top_word
+
+    # top_array = array_of_words.find_all { |word| score(word) == highest_score}
+    # top_array.sort.last
     # if (top_array.length = 2)
     #   top_array.find { |word| word if tied_score(word, highest_score_word)}
     # else

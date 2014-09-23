@@ -11,7 +11,7 @@ describe Scrabble do
 
     describe ".highest_score_from(array_of_words)" do
       it "returns word with highest score" do
-        expect(Scrabble.highest_score_from(["test", "zebra", "boo", "hambone", "tag", "zpp"])).to eq "zpp"
+        expect(Scrabble.highest_score_from(["test", "zebra", "boo", "hambone", "tag", "zpp", "jx"])).to eq "jx"
       end
     end
 
