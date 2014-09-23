@@ -37,8 +37,13 @@ class Scrabble
   #   @scores_array
   # end
 
-  def self.tied_score(array_of_words)
-    array_of_words.each { |word| word if score(word).length < score(word).length}
+  def self.tied_score(word, another_word)
+    if (score(word) == score(another_word)) && (word.length <
+      another_word.length)
+      score(word)
+    else
+      another_word
+    end
   end
 
   def self.word_array(word)

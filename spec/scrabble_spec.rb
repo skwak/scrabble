@@ -23,7 +23,7 @@ describe Scrabble do
 
     describe ".tied_score" do
       it "returns word with highest score" do
-        expect(Scrabble.tied_score(["test", "tag"])).to eq "tag"
+        expect(Scrabble.tied_score("test", "tag")).to eq "tag"
       end
     end
 
