@@ -2,7 +2,7 @@ require './scrabble'
 
 describe Scrabble do
 
-  describe "class methods" do
+  describe "class method" do
     describe ".score" do
       it "returns sum of the letter values" do
         expect(Scrabble.score("canteen")).to eq 9
@@ -16,7 +16,7 @@ describe Scrabble do
     end
 
     describe ".tied_score" do
-      it "returns word with highest score" do
+      it "returns the shorter word in a tie" do
         expect(Scrabble.tied_score("test", "tag")).to eq "tag"
       end
     end
@@ -78,8 +78,8 @@ describe Scrabble do
         end
       end
 
-      context "when letters in a mix of letters" do
-        it "returns array of different numbers" do
+      context "when letters in a word have a mix of values" do
+        it "returns array of different values" do
           expect(Scrabble.array_of_values("queen")).to eq [10,1,1,1,1]
         end
       end
