@@ -24,9 +24,7 @@ class Player
 
   def total_score
     sum=0
-    @plays.each do |word|
-      sum+=Scrabble.score(word)
-    end
+    @plays.each { |word| sum+=Scrabble.score(word)}
     sum
   end
 
