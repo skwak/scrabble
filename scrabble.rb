@@ -20,22 +20,25 @@
 # J, X	8
 # Q, Z	10
 class Scrabble
+  attr_accessor :word
 
-  def initialize(word)
+  # def initialize
+  #   @word = word
+  # end
+
+  def self.score(word)
+    array_of_values(word)
+    @num_array.inject { |sum, item| sum + item}
+  end
+
+  def self.word_array(word)
     @word = word
+    word.downcase.split(//)
+  end
+
+  def self.array_of_values(word)
     @num_array = []
-  end
-
-  def self.score
-    4
-  end
-
-  def word_array
-    @word.downcase.split(//)
-  end
-
-  def word_points
-    word_array.each do |letter|
+    word_array(word).each do |letter|
       if letter == "a" || letter == "e" || letter == "i" || letter == "o" ||
       letter == "u" || letter == "l" || letter == "n" ||
       letter == "r" || letter == "s" || letter == "t"
@@ -56,11 +59,6 @@ class Scrabble
       end
     end
     @num_array
-  end
-
-  def add_array_points
-    word_points
-    @num_array.inject { |sum, item| sum + item}
   end
 
 end
