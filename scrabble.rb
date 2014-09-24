@@ -68,5 +68,4 @@ class Scrabble
     end
     @num_array
   end
-
 end
