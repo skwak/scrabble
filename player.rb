@@ -22,6 +22,10 @@ class Player
     Scrabble.highest_score_from(@plays)
   end
 
+  def highest_word_score
+    Scrabble.score(highest_scoring_word)
+  end
+
   def total_score
     sum=0
     @plays.each { |word| sum+=Scrabble.score(word)}
@@ -36,11 +40,4 @@ class Player
     end
   end
 
-  # def all_words_into_array(scores)
-  #   scores.each { |score| @scores_array << score }
-  # end
-  #
-  # def total_score
-  #   @scores_array.inject { |sum, item| sum + item }
-  # end
 end

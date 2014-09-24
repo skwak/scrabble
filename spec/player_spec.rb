@@ -30,6 +30,15 @@ describe Player do
       end
     end
 
+    describe "#highest_word_score" do
+      it "returns the score of the highest scoring word" do
+        player.play("bumpy")
+        player.play("jumpy")
+        player.play("lumpy")
+        expect(player.highest_word_score).to eq 19
+      end
+    end
+
     describe "#total_score" do
       it "returns total score of all the player's words" do
         player.play("bump")
@@ -37,6 +46,7 @@ describe Player do
         expect(player.total_score).to eq 25
       end
     end
+
 
   describe "#won?" do
     it "returns whether or not player has over 100 pts" do
